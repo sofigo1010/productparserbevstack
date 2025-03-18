@@ -5,7 +5,7 @@ import UploadPage from "./app/upload/page";
 import UploadFilterPage from "./app/filter/page";
 
 function App() {
-    const user = JSON.parse(localStorage.getItem("user")); // Leer usuario autenticado
+    const user = JSON.parse(localStorage.getItem("user")); 
 
     return (
         <Routes>

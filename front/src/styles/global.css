@@ -253,7 +253,8 @@ button:hover {
     color: #ffffff;
 }
 
-.upload-page {
+
+.uploaduploadproduct-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -263,7 +264,7 @@ button:hover {
 }
 
 
-.upload-container {
+.uploaduploadproduct-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -277,7 +278,7 @@ button:hover {
 }
 
 
-.upload-title {
+.uploaduploadproduct-title {
     font-size: 2.2rem;
     font-weight: bold;
     color: #00b2ff;
@@ -287,7 +288,7 @@ button:hover {
 }
 
 
-.drop-zone {
+.dropuploadproduct-zone {
     border: 2px dashed #00b2ff;
     padding: 30px;
     text-align: center;
@@ -300,7 +301,7 @@ button:hover {
     margin-bottom: 15px;
 }
 
-.drop-zone:hover {
+.drop-zoneuploadproduct:hover {
     background: rgba(0, 178, 255, 0.1);
     transform: scale(1.02);
 }
@@ -325,7 +326,7 @@ button:hover {
 }
 
 
-.upload-button {
+.uploadproduct-button {
     background: linear-gradient(135deg, #00b2ff, #0088cc);
     color: white;
     border: none;
@@ -339,13 +340,13 @@ button:hover {
     max-width: 400px;
 }
 
-.upload-button:hover {
+.uploadproduct-button:hover {
     background: linear-gradient(135deg, #0088cc, #0066b3);
     transform: scale(1.05);
 }
 
 
-.upload-message {
+.uploadproduct-message {
     margin-top: 15px;
     font-size: 1rem;
     color: white;
