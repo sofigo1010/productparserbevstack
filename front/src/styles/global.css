@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 95%;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título principal aesthetic */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #00b2ff;
+    text-shadow: 0 0 10px rgba(0, 178, 255, 0.8);
+}
+
+/* Botones aesthetic */
+button {
+    background: linear-gradient(135deg, #00b2ff, #0088cc);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 178, 255, 0.4);
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0088cc, #0066b3);
+    transform: scale(1.05);
+}
+
+/* Drag & Drop con mejor proporción */
+.drop-zone {
+    border: 2px dashed #00b2ff;
+    border-radius: 12px;
+    padding: 40px;
+    margin: 20px auto;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 10px rgba(0, 178, 255, 0.4);
+    width: 100%;
+    max-width: 600px;
+}
+
+.drop-zone input {
+    display: none;
+}
+
+/* Contenedor flexible para el upload */
+.upload-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Ocupa más espacio */
+.upload-container .drop-zone {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Tabla moderna aesthetic */
+.store-table-container {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 178, 255, 0.2);
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1000px;
+    overflow-x: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ajuste de tabla para ocupar más espacio */
+.store-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Headers aesthetic con highlight en celeste */
+.store-table th {
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+}
+
+.store-table th::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 80%;
+    height: 3px;
+    background: #00b2ff;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Filas centradas y bien espaciadas */
+.store-table td {
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Efecto hover aesthetic */
+.store-table tr:hover {
+    background-color: rgba(0, 178, 255, 0.1);
+    transition: background 0.3s ease;
+}
+
+/* Checkboxes más grandes */
+.store-checkbox {
+    width: 22px;
+    height: 22px;
+    accent-color: #00b2ff;
+    cursor: pointer;
+}
+
+/* Ajustes Responsive */
+@media (max-width: 768px) {
+    .container {
+        max-width: 98%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .drop-zone {
+        padding: 30px;
+    }
+
+    .store-table th, .store-table td {
+        padding: 12px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
