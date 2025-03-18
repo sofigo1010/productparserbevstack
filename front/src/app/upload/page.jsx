@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const API_URL = "http://localhost:5000";
@@ -18,7 +18,9 @@ const UploadPage = () => {
     }, []);
 
     const handleFileChange = (e, setter) => {
-        setter(e.target.files[0]);
+        if (e.target.files.length > 0) {
+            setter(e.target.files[0]);
+        }
     };
 
     const handleDragOver = (e) => {
@@ -67,6 +69,7 @@ const UploadPage = () => {
             link.setAttribute("download", "resultado.csv");
             document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
             setMessage("✅ Archivo generado y descargado correctamente.");
         } catch (error) {
             setMessage("❌ Error al subir los archivos.");
@@ -78,32 +81,64 @@ const UploadPage = () => {
             <h1>PRODUCT UPLOAD</h1>
 
             <div className="upload-container">
-                <label className="drop-zone"
-                    onDragOver={handleDragOver}
-                    onDragLeave={handleDragLeave}
-                    onDrop={(e) => handleDrop(e, setMainCSV)}>
-                    <input type="file" accept=".csv" onChange={(e) => handleFileChange(e, setMainCSV)} />
-                    {mainCSV ? `📂 ${mainCSV.name}` : "Arrastra o haz clic para subir el CSV principal"}
-                </label>
-
-                <label className="drop-zone"
-                    onDragOver={handleDragOver}
-                    onDragLeave={handleDragLeave}
-                    onDrop={(e) => handleDrop(e, setNewProducts)}>
-                    <input type="file" accept=".csv" onChange={(e) => handleFileChange(e, setNewProducts)} />
-                    {newProducts ? `📂 ${newProducts.name}` : "Arrastra o haz clic para subir nuevos productos"}
-                </label>
+                {[{ label: "el CSV de BC", setter: setMainCSV, file: mainCSV },
+                  { label: "el listado de nuevos productos", setter: setNewProducts, file: newProducts }]
+                  .map(({ label, setter, file }, index) => (
+                    <label
+                        key={index}
+                        className={`drop-zone ${dragging ? "dragging" : ""}`}
+                        onDragOver={handleDragOver}
+                        onDragLeave={handleDragLeave}
+                        onDrop={(e) => handleDrop(e, setter)}
+                    >
+                        <input type="file" accept=".csv" onChange={(e) => handleFileChange(e, setter)} />
+                        {file ? `📂 ${file.name}` : `Arrastra o haz clic para subir ${label}`}
+                    </label>
+                ))}
             </div>
+
+            {/* Nuevo título pequeño y celeste encima de la tabla */}
+            <h2 style={{
+                fontSize: "1.5rem",
+                fontWeight: "600",
+                color: "#00b2ff",
+                marginTop: "20px",
+                textAlign: "center"
+            }}>
+                Seleccione los retailers a los que desea conectar los nuevos productos
+            </h2>
+
 
             <div className="store-table-container">
                 <table className="store-table">
-                    <thead><tr><th>Seleccionar</th><th>Nombre</th><th>ID</th></tr></thead>
-                    <tbody>{storeList.map((store) => (<tr key={store.Store_ID}><td><input type="checkbox" className="store-checkbox" onChange={() => handleCheckboxChange(store.Store_ID)} /></td><td>{store.Store_Name}</td><td>{store.Store_ID}</td></tr>))}</tbody>
+                    <thead>
+                        <tr>
+                            <th>Seleccionar</th>
+                            <th>Nombre</th>
+                            <th>ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {storeList.map((store) => (
+                            <tr key={store.Store_ID}>
+                                <td>
+                                    <input
+                                        type="checkbox"
+                                        className="store-checkbox"
+                                        checked={selectedStores.includes(store.Store_ID)}
+                                        onChange={() => handleCheckboxChange(store.Store_ID)}
+                                    />
+                                </td>
+                                <td>{store.Store_Name}</td>
+                                <td>{store.Store_ID}</td>
+                            </tr>
+                        ))}
+                    </tbody>
                 </table>
             </div>
 
             <button onClick={handleUpload}>Generar CSV</button>
-            <p>{message}</p>
+            {message && <p>{message}</p>}
         </div>
     );
 };

@@ -1,9 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-
-/* Fuente moderna */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
@@ -14,7 +9,7 @@ body {
     padding: 0;
 }
 
-/* Contenedor principal */
+
 .container {
     max-width: 95%;
     margin: 50px auto;
@@ -22,16 +17,16 @@ body {
     text-align: center;
 }
 
-/* Título principal aesthetic */
+
 h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 30px;
     color: #00b2ff;
-    text-shadow: 0 0 10px rgba(0, 178, 255, 0.8);
+    text-shadow: 0 0 10px rgba(0, 134, 192, 0.8);
 }
 
-/* Botones aesthetic */
+
 button {
     background: linear-gradient(135deg, #00b2ff, #0088cc);
     color: white;
@@ -54,7 +49,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Drag & Drop con mejor proporción */
+
 .drop-zone {
     border: 2px dashed #00b2ff;
     border-radius: 12px;
@@ -72,7 +67,7 @@ button:hover {
     display: none;
 }
 
-/* Contenedor flexible para el upload */
+
 .upload-container {
     display: flex;
     justify-content: center;
@@ -80,15 +75,15 @@ button:hover {
     gap: 20px;
 }
 
-/* Ocupa más espacio */
+
 .upload-container .drop-zone {
     flex: 1;
     min-width: 300px;
 }
 
-/* Tabla moderna aesthetic */
+
 .store-table-container {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 178, 255, 0.2);
@@ -100,13 +95,13 @@ button:hover {
     margin-right: auto;
 }
 
-/* Ajuste de tabla para ocupar más espacio */
+
 .store-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-/* Headers aesthetic con highlight en celeste */
+
 .store-table th {
     font-weight: 600;
     font-size: 1.2rem;
@@ -128,7 +123,7 @@ button:hover {
     border-radius: 2px;
 }
 
-/* Filas centradas y bien espaciadas */
+
 .store-table td {
     padding: 15px;
     text-align: center;
@@ -136,13 +131,13 @@ button:hover {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Efecto hover aesthetic */
+
 .store-table tr:hover {
     background-color: rgba(0, 178, 255, 0.1);
     transition: background 0.3s ease;
 }
 
-/* Checkboxes más grandes */
+
 .store-checkbox {
     width: 22px;
     height: 22px;
@@ -150,7 +145,7 @@ button:hover {
     cursor: pointer;
 }
 
-/* Ajustes Responsive */
+
 @media (max-width: 768px) {
     .container {
         max-width: 98%;
@@ -173,3 +168,187 @@ button:hover {
         padding: 12px 20px;
     }
 }
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+}
+
+
+.login-box {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 178, 255, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+
+.login-logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+
+.login-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #00b2ff;
+    margin-bottom: 20px;
+}
+
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.login-input {
+    background: #1e1e1e;
+    border: 1px solid #00b2ff;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.login-input:focus {
+    border-color: #0088cc;
+}
+
+
+.login-button {
+    background: linear-gradient(135deg, #00b2ff, #0088cc);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 178, 255, 0.4);
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, #0088cc, #0066b3);
+    transform: scale(1.05);
+}
+
+
+.login-message {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.upload-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #000000;
+}
+
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 178, 255, 0.3);
+}
+
+
+.upload-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #00b2ff;
+    text-shadow: 0 0 10px rgba(0, 178, 255, 0.8);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+.drop-zone {
+    border: 2px dashed #00b2ff;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+.drop-zone:hover {
+    background: rgba(0, 178, 255, 0.1);
+    transform: scale(1.02);
+}
+
+.keyword-input {
+    padding: 12px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #00b2ff;
+    border-radius: 8px;
+    background: #1e1e1e;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.keyword-input:focus {
+    border-color: #0088cc;
+}
+
+
+.upload-button {
+    background: linear-gradient(135deg, #00b2ff, #0088cc);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+}
+
+.upload-button:hover {
+    background: linear-gradient(135deg, #0088cc, #0066b3);
+    transform: scale(1.05);
+}
+
+
+.upload-message {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+}
+
